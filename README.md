@@ -4,6 +4,8 @@
 
 (EN) This is a dynamic masking using "[Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)" (an extension) that apply dynamic application of user CSS, can be applied to the [SORACOM user console](https://console.soracom.io/).
 
+![Overview](https://user-images.githubusercontent.com/785097/108852661-3c292c00-7629-11eb-8b72-12bba86b9958.gif)
+
 ## Getting started
 
 NOTICE: Stylus は Chrome と Firefox をサポートしていますが、Chrome のみ確認済みです。/ Stylus supports Chrome and Firefox, but I've only checked Chrome.
@@ -14,6 +16,9 @@ NOTICE: Stylus は Chrome と Firefox をサポートしていますが、Chrome
 - Step 2
     - `stylus-soarcom-userconsole.user.css` をクリックしたあと、「インストール」をクリック / Click to `stylus-soarcom-userconsole.user.css` then click to "INSTALL".
     - > [stylus-soarcom-userconsole.user.css](https://raw.githubusercontent.com/ma2shita/stylus-soarcom-userconsole/main/stylus-soarcom-userconsole.user.css)
+
+![Step2](https://user-images.githubusercontent.com/785097/108853124-b22d9300-7629-11eb-9067-9e0ddc77d475.gif)
+
 
 その他の使い方は[Stylus](https://add0n.com/stylus.html)をご覧ください。 / See [Stylus](https://add0n.com/stylus.html) for other ways to use it.
 
