@@ -51,7 +51,9 @@
     sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > sc-subscriber-session-info > form > div:nth-child(3) > div > sc-subscriber-session-logs > div > div.panel-body > div.col-sm-12 > div > table > tbody td.session-log-cell-id {filter:blur(5px);} /* CELL ID in session history */
     sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > sc-subscriber-session-info > form > div.form-group.ng-scope > div.col-sm-9 > div.openlayers.ng-scope > div > div.ol-viewport {filter:blur(5px);} /* map in session history */
     
-    #wrapper > div > sc-subscribers > sc-subscriber-locations-component > div {filter:blur(10px);} /* hide map */
+    sc-subscriber-locations-component > div {filter:blur(10px);} /* Blur map */
+    sc-subscriber-locations-component div.ol-overlay-container.ol-selectable > div > div > dl > dd:nth-child(2) > div {filter:blur(5px);} /* IMSI */
+    sc-subscriber-locations-component div.ol-overlay-container.ol-selectable > div > div > dl > dd:nth-child(8) > div {filter:blur(5px);} /* IP address */
     
     /* Napter */
     app-on-demand-remote-access-component > div > form > mat-form-field > div > div.mat-form-field-flex > div {filter:blur(5px);} /* IMSI */
