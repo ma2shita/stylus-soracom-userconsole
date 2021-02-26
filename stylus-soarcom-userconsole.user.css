@@ -185,3 +185,7 @@
     body > div > div > div:nth-child(2) > div:nth-child(1) > div > dl:nth-child(8) > dd > div {filter:blur(5px);} /* endpoint */
   }
   
+  @-moz-document url-prefix("https://try.soracom.io/lagoon-gallery/") {
+    #resource-id:not(:placeholder-shown){filter:blur(5px);} /* resource id */
+  }
+  
