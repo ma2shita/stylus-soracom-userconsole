@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           SORACOM UserConsole for DEMO
 @namespace      github.com/ma2shita/stylus-soarcom-userconsole
-@version        1.0.2
+@version        1.0.3
 @description    Dynamic masking for SORACOM User console with Stylus
 @author         Kohei "Max" MATSUSHITA
 @homepageURL    https://github.com/ma2shita/stylus-soarcom-userconsole
@@ -12,27 +12,28 @@
   /* Login form for root account */
   #login-email:not(:placeholder-shown){filter:blur(5px);}
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/sam_login") {
   /* Login form for SAM */
   #login-operator-id:not(:placeholder-shown){filter:blur(3px);}
   #login-username:not(:placeholder-shown){filter:blur(3px);}
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/") {
-  /* List of SIMs */
-  #search-keywords {color: #fff !important} /* hide search text */
-
-  #aaa > div.navbar-collapse.collapse > ul.nav.navbar-top-links.navbar-right.hidden-xs > app-account-dropdown-xs > li > ul > li.dropdown-header {font-size:0;} /* rewrite to OPID (Step1) */
-  #aaa > div.navbar-collapse.collapse > ul.nav.navbar-top-links.navbar-right.hidden-xs > app-account-dropdown-xs > li > ul > li.dropdown-header:before {content:"オペレータ ID: OPxxxxxxxxxx";font-size:1.5rem} /* rewrite to OPID (Step2) */
-
   #account-dropdown span{font-size:0;} /* rewrite to account name (Step1) */
   #account-dropdown:before{content:"YOUR@example.jp  ";font-size:1.5rem;} /* rewrite to account name (Step2) */
-
+  /* List of SIMs */
+  
+  #search-keywords {color: #fff !important} /* hide search text */
+  #subscribers-table td.imei-lock {filter:blur(5px);} /* IMEI lock */
+  
+  #aaa > div.navbar-collapse.collapse > ul.nav.navbar-top-links.navbar-right.hidden-xs > app-account-dropdown-xs > li > ul > li.dropdown-header {font-size:0;} /* rewrite to OPID (Step1) */
+  #aaa > div.navbar-collapse.collapse > ul.nav.navbar-top-links.navbar-right.hidden-xs > app-account-dropdown-xs > li > ul > li.dropdown-header:before {content:"オペレータ ID: OPxxxxxxxxxx";font-size:1.5rem} /* rewrite to OPID (Step2) */
+  
   /* for change group dialog */
   table > tbody > tr > td.imsi {font-size:0} /* rewrite of IMSI (Step1) */
   table > tbody > tr > td.imsi:before{content:"44099 99999 99990";font-size:1.4rem;} /* rewrite of IMSI (Step2) */
-
+  
   /* for detail dialog */
   sc-subscriber-details-modal > div.modal-body > form > div:nth-child(2) > div > p {filter:blur(5px);} /* IMSI */
   sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > form > div:nth-child(1) > div:nth-child(2) > p {filter:blur(5px);} /* MSISDN */
@@ -41,10 +42,10 @@
   sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > form > div:nth-child(3) > div:nth-child(2) > p:before{content:"10.X.X.X";font-size:1.5rem;} /* rewrite of IP Address (Step2) */
   sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > form > div:nth-child(5) > div.col-sm-4 > p {font-size:0;} /* rewrite of IMEI (Step1) */
   sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > form > div:nth-child(5) > div.col-sm-4 > p:before{content:"8670XXXXXXXXX26";font-size:1.5rem;} /* rewrite of IMEI (Step2) */
-
+  
   sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > sc-tag-list > table > tbody:nth-child(2) td:nth-child(2) {filter:blur(4px);} /* tag value in tags */
   input#tag-value:not(:placeholder-shown) {filter:blur(3px);} /* dynamic mask for tag value */
-
+  
   sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > sc-subscriber-session-info > form > div:nth-child(3) > div > sc-subscriber-session-logs > div > div.panel-body > div.col-sm-12 > div > table > tbody td.session-log-imei {filter:blur(5px);} /* IMEI in session history */
   sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > sc-subscriber-session-info > form > div:nth-child(3) > div > sc-subscriber-session-logs > div > div.panel-body > div.col-sm-12 > div > table > tbody td.session-log-area-code {filter:blur(5px);} /* AREA CODE in session history */
   sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > sc-subscriber-session-info > form > div:nth-child(3) > div > sc-subscriber-session-logs > div > div.panel-body > div.col-sm-12 > div > table > tbody td.session-log-cell-id {filter:blur(5px);} /* CELL ID in session history */
@@ -54,26 +55,29 @@
   sc-subscriber-locations-component div.ol-overlay-container.ol-selectable > div > div > dl > dd:nth-child(2) > div {filter:blur(5px);} /* IMSI */
   sc-subscriber-locations-component div.ol-overlay-container.ol-selectable > div > div > dl > dd:nth-child(8) > div {filter:blur(5px);} /* IP address */
   
+  /* IMEI lock dialog */
+  app-change-subscribers-imei-lock input:not(:placeholder-shown) {filter:blur(5px);}
+  
   /* Napter */
   app-on-demand-remote-access-component > div > form > mat-form-field > div > div.mat-form-field-flex > div {filter:blur(5px);} /* IMSI */
   app-on-demand-remote-access-component td.value.x-allowed-ip-ranges > code {filter:blur(5px);}
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/groups") {
   /* List of SIM group */
   #groups-table > tbody > tr > td {filter:blur(5px);}
   #groups-table > tbody > tr:nth-child(1) > td {filter:blur(0px);} /* Clarify the first item for live demo */
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/groups?id=") {
   /* Detail of SIM group */
   #groups-table > tbody > tr:nth-child(1) > td {filter:blur(5px);} /* Overwrite */
   #groups-table > tbody > tr.group.clickable-row.ng-scope.selected-row > td {filter:blur(0px);} /* Clarify the selected item for live demo */
-
+  
   /** for Orbit */
   sc-group-params-orbit > form > fieldset > div:nth-child(1) > input{filter:blur(3px);} /* code SRN */
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/sigfox_devices") {
   /* Sigfox devices */
   sc-change-group-modal-component > form > div > div.modal-body > div > div:nth-child(1) > div > p {filter:blur(3px);}
@@ -93,43 +97,43 @@
   #harvest-data-table > tbody  td.harvest-data-content{filter:blur(5px);}
   #harvest-data-table > tbody  td.harvest-data-decoded-data{filter:blur(5px);}
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/lagoon") {
   /* Manage of Lagoon */
   #lagoon-users-table > tbody > tr > td.lagoon-users-email {filter:blur(5px);} /* lagoon user table */
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/soralets/") {
   /* Manage of Soralet */
   #page-wrapper > div > app-soralet > div > div.ds-group > div > app-soralet-versions > div > div:nth-child(2) > table > tbody > tr > td:nth-child(2){filter:blur(3px);}
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/billings") {
   /* Billing */
   td.amount {filter:blur(5px);} /* amount in table */
   span.latest-bill-amount{font-size:0;} /* rewrite of amount of currently month (Step1) */
   span.latest-bill-amount:before{content:"1,999";font-size:2.7rem;} /* rewrite of amount of currently month (Step2) */
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/orders") {
   /* Order history */
   #page-wrapper div.shipping-address {filter:blur(5px);} /* Shipping address */
   #page-wrapper > div:nth-child(4) > div > sc-orders > table > tbody > tr > td:nth-child(4) {filter:blur(5px);} /* Amount */
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/security/users/") {
   /* Manage of SAM user */
   form > div:nth-child(2) > div.col-sm-9 {font-size:0} /* rewrite of Login URL (Step1) */
   form > div:nth-child(2) > div.col-sm-9:before{content:"https://console.soracom.io/#/sam_login?o=OPxxxxxxxxxx&coverage_type=jp";font-size:1.4rem;} /* rewrite of Login URL (Step2) */
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/security/credentials") {
   /* Manage of Credentials */
   sc-credentials td.id {filter:blur(5px);}
   sc-credentials td.last-used {filter:blur(5px);}
   sc-credentials td.description {filter:blur(5px);}
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/payment_statements") {
   /* Payment statement */
   div.panel-body > dl > dd.company-name {filter:blur(4px);}
@@ -137,33 +141,33 @@
   div.panel-body > dl > dd.full-name {filter:blur(4px);}
   td.payment-statement-amount {filter:blur(4px);}
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/payments") {
   /* Payments */
   #card-holder-name {filter:blur(4px);}
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/gadgets/gps_multiunit") {
   /* GPS Multiunit SORACOM Edition */
   td.ui-td-imsi.x-td-imsi{filter:blur(5px);} /* IMSI */
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/gadgets/aws_button") {
   /* LTE-M Button powered by AWS */
   td.button-serial-number {filter: blur(5px);}
 }
-  
+
 @-moz-document url-prefix("https://console.soracom.io/#/gadgets/lte_m_button") {
   /* LTE-M Button for Enterprise / Plus */
   td.ui-td-dsn.x-td-dsn {filter: blur(5px);}
   td.ui-td-imsi.x-td-imsi {filter: blur(5px);}
 }
-  
+
 @-moz-document url-prefix("https://jp.lagoon.soracom.io") {
   /* SORACOM Lagoon */
   #login-view > form > div:nth-child(1) > input:not(:placeholder-shown){filter:blur(5px);}  /* mask email in login form */
   body > grafana-app > sidemenu > div.sidemenu__bottom > div:nth-child(2) > ul > li.side-menu-header > span {filter:blur(5px);} /* mask email in sidebar menu */
-
+  
   /* mask for datepicker */
   body > grafana-app > sidemenu > div.sidemenu__bottom > div:nth-child(2) > ul > li.side-menu-header > span {filter:blur(5px);}
   body > grafana-app > div.main-view > div > div > div > dashnav > div > gf-time-picker > div:nth-child(2) > button.btn.navbar-button.gf-timepicker-nav-btn > span:nth-child(2) {filter:blur(5px);}
