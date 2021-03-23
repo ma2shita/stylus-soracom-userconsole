@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           SORACOM UserConsole for DEMO
 @namespace      github.com/ma2shita/stylus-soarcom-userconsole
-@version        1.0.3
+@version        1.0.4
 @description    Dynamic masking for SORACOM User console with Stylus
 @author         Kohei "Max" MATSUSHITA
 @homepageURL    https://github.com/ma2shita/stylus-soarcom-userconsole
@@ -182,7 +182,7 @@
 
 @-moz-document url-prefix("https://console.mosaic.soracom.io/jp/en/devices") {
   /* SORACOM Mosaic Console */
-  body > div > header > aside > details:nth-child(4) > summary > span > span {filter:blur(5px);} /* OPID */
+  body > div > header > aside > details:nth-child(5) > summary > span > span {filter:blur(5px);} /* OPID */
   body > div > div > div.ds-layout__main > table > tbody > tr > td:nth-child(2) {filter:blur(5px);} /* mosaic ID */
   body > div > div > div:nth-child(2) > div:nth-child(1) > div > dl:nth-child(3) > dd > div {filter:blur(5px);} /* mosaic ID */
   body > div > div > div:nth-child(2) > div:nth-child(1) > div > dl:nth-child(8) > dd > div {filter:blur(5px);} /* endpoint */
