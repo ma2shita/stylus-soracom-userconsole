@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           SORACOM UserConsole for DEMO
 @namespace      github.com/ma2shita/stylus-soarcom-userconsole
-@version        1.0.4
+@version        1.0.5
 @description    Dynamic masking for SORACOM User console with Stylus
 @author         Kohei "Max" MATSUSHITA
 @homepageURL    https://github.com/ma2shita/stylus-soarcom-userconsole
@@ -11,12 +11,16 @@
 @-moz-document url-prefix("https://console.soracom.io/#/login") {
   /* Login form for root account */
   #login-email:not(:placeholder-shown){filter:blur(5px);}
+  /* login banner */
+  .login-banner {filter:blur(5px);}
 }
 
 @-moz-document url-prefix("https://console.soracom.io/#/sam_login") {
   /* Login form for SAM */
   #login-operator-id:not(:placeholder-shown){filter:blur(3px);}
   #login-username:not(:placeholder-shown){filter:blur(3px);}
+  /* login banner */
+  .login-banner {filter:blur(5px);}
 }
 
 @-moz-document url-prefix("https://console.soracom.io/#/") {
