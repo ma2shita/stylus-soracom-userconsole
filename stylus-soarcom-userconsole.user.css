@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           SORACOM UserConsole for DEMO
 @namespace      github.com/ma2shita/stylus-soarcom-userconsole
-@version        1.1.1
+@version        1.2.0
 @description    Dynamic masking for SORACOM User console with Stylus
 @author         Kohei "Max" MATSUSHITA
 @homepageURL    https://github.com/ma2shita/stylus-soarcom-userconsole
@@ -65,6 +65,9 @@
   /* Napter */
   app-on-demand-remote-access-component > div > form > mat-form-field > div > div.mat-form-field-flex > div {filter:blur(5px);} /* IMSI */
   app-on-demand-remote-access-component td.value.x-allowed-ip-ranges > code {filter:blur(5px);}
+
+  /* Device ping dialog */
+  app-ping-subscribers td.imsi {filter:blur(5px);}
 }
 
 @-moz-document url-prefix("https://console.soracom.io/#/groups") {
