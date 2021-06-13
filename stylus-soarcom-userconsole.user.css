@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           SORACOM UserConsole for DEMO
 @namespace      github.com/ma2shita/stylus-soarcom-userconsole
-@version        1.2.0
+@version        1.2.1
 @description    Dynamic masking for SORACOM User console with Stylus
 @author         Kohei "Max" MATSUSHITA
 @homepageURL    https://github.com/ma2shita/stylus-soarcom-userconsole
@@ -186,6 +186,19 @@
   /* masking in setting page */
   body > grafana-app > div.main-view > div > div > page-header > div > div > div > div > div > h1 {filter:blur(6px);}
   body > grafana-app > div.main-view > div > div > div > form input {filter:blur(5px)}
+}
+
+@-moz-document url-prefix("https://jp-v2.lagoon.soracom.io") {
+  /* Login form */
+  grafana-app react-container form > div:nth-child(1) input:not(:placeholder-shown) {filter: blur(5px);} /* not exists placeholder */
+  /* mask email in sidebar menu */
+  body > grafana-app > sidemenu > div.sidemenu__bottom > div:nth-child(1) > ul > li.side-menu-header > span {filter:blur(5px);}
+}
+
+@-moz-document url-prefix("https://jp-v2.lagoon.soracom.io/profile") {
+  /* SORACOM Lagoon / profile */
+  /* masking in setting page */
+  body > grafana-app > div > div > react-container h1 {filter:blur(6px);}
 }
 
 @-moz-document url-prefix("https://console.mosaic.soracom.io/jp/en") {
