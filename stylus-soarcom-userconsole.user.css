@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           SORACOM UserConsole for DEMO
 @namespace      github.com/ma2shita/stylus-soarcom-userconsole
-@version        1.3.2
+@version        1.3.3
 @description    Dynamic masking for SORACOM User console with Stylus
 @author         Kohei "Max" MATSUSHITA
 @homepageURL    https://github.com/ma2shita/stylus-soarcom-userconsole
@@ -111,9 +111,9 @@
   app-multi-resource-selector > details > summary > span > span:nth-child(2) > a > span > span {filter:blur(5px);}
 }
 
-@-moz-document url-prefix("https://console.soracom.io/#/lagoon") {
+@-moz-document url-prefix("https://console.soracom.io/#/lagoon/users") {
   /* Manage of Lagoon */
-  #lagoon-users-table > tbody > tr > td.lagoon-users-email {filter:blur(5px);} /* lagoon user table */
+  td.ui-td-email.x-td-email {filter:blur(5px);} /* lagoon user table */
 }
 
 @-moz-document url-prefix("https://console.soracom.io/#/soralets/") {
