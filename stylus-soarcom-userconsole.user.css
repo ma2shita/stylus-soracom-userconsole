@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           SORACOM UserConsole for DEMO
 @namespace      github.com/ma2shita/stylus-soarcom-userconsole
-@version        1.3.4
+@version        1.4.0
 @description    Dynamic masking for SORACOM User console with Stylus
 @author         Kohei "Max" MATSUSHITA
 @homepageURL    https://github.com/ma2shita/stylus-soarcom-userconsole
@@ -207,24 +207,8 @@
   body > grafana-app > div > div > react-container h1 {filter:blur(6px);}
 }
 
-@-moz-document url-prefix("https://console.mosaic.soracom.io/jp/en") {
-  #svelte > div.ds-layout__main > table > tbody > tr > td:nth-child(1) {filter:blur(5px);} /* device ID */
-  #svelte > div.ds-layout__main > table > tbody > tr > td:nth-child(2) {filter:blur(5px);} /* mosaic ID */
-  #svelte > header > aside > details:nth-child(5) > summary > span {filter:blur(5px);} /* OPID */
-  #svelte > header > aside > details:nth-child(5) > div > div {filter:blur(5px);} /* OPID */
-}
-
-@-moz-document url-prefix("https://console.mosaic.soracom.io/jp/en/") {
-  /* SORACOM Mosaic Console / detail */
-  #svelte > div.ds-tabs--panel.ds-tabs--vertical > div > div > table > tbody > tr > td:nth-child(1) > div {filter:blur(5px);} /* device ID */
-  #svelte > div.ds-tabs--panel.ds-tabs--vertical > div > div > div:nth-child(2) > dl > dd:nth-child(8) > div {filter:blur(5px);} /* endpoint */
-  #svelte > div.ds-tabs--panel.ds-tabs--vertical > div > div > table > tbody > tr > td:nth-child(4) > div {filter:blur(5px);} /* mosaic ID */
-  #svelte > div.ds-tabs--panel.ds-tabs--vertical > div > div > dl > dd:nth-child(4) > div {filter:blur(5px);} /* serial number */
-  #svelte > div.ds-tabs--panel.ds-tabs--vertical > div > div > dl > dd:nth-child(14) > div {filter:blur(5px);} /* IMSI */
-  #svelte > div.ds-tabs--panel.ds-tabs--vertical > div > div > dl > dd:nth-child(16) > div {filter:blur(5px);} /* IMEI */
-  #svelte > div.ds-tabs--panel.ds-tabs--vertical > div > div > dl > dd:nth-child(18) > div {filter:blur(5px);} /* SIM Serial */
-  #svelte > div.ds-tabs--panel.ds-tabs--vertical > div > div > div.ds-span--6.ds-rows > div.ds-modal > div > div > div.ds-dialog__main > dl:nth-child(2) > dd:nth-child(10) > div {filter:blur(5px);} /* Napter: FROM */
-
+@-moz-document url-prefix("https://console.mosaic.soracom.io/jp") {
+  .sensitive{filter:blur(5px);}
 }
 
 @-moz-document url-prefix("https://try.soracom.io/lagoon-gallery/") {
