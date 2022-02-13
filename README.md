@@ -1,4 +1,4 @@
-# stylus-soarcom-userconsole
+# stylus-soracom-userconsole
 
 (JP) ユーザーCSSを動的に適用する機能拡張「[Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)」を利用した動的マスキングで、[SORACOM ユーザーコンソール](https://console.soracom.io/)に適用できます。
 
@@ -14,8 +14,8 @@ NOTICE: Stylus は Chrome と Firefox をサポートしていますが、Chrome
     - Stylus をインストール / Install Stylus to your browser.
     - > [Stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
 - Step 2
-    - `stylus-soarcom-userconsole.user.css` をクリックしたあと、「インストール」をクリック / Click to `stylus-soarcom-userconsole.user.css` then click to "INSTALL".
-    - > [stylus-soarcom-userconsole.user.css](https://raw.githubusercontent.com/ma2shita/stylus-soarcom-userconsole/main/stylus-soarcom-userconsole.user.css)
+    - `stylus-soracom-userconsole.user.css` をクリックしたあと、「インストール」をクリック / Click to `stylus-soracom-userconsole.user.css` then click to "INSTALL".
+    - > [stylus-soracom-userconsole.user.css](https://raw.githubusercontent.com/ma2shita/stylus-soracom-userconsole/main/stylus-soracom-userconsole.user.css)
 
 ![Step2](https://user-images.githubusercontent.com/785097/108853124-b22d9300-7629-11eb-9067-9e0ddc77d475.gif)
 
