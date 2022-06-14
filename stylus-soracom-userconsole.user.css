@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           SORACOM UserConsole for DEMO
 @namespace      github.com/ma2shita/stylus-soracom-userconsole
-@version        1.5.1
+@version        2.0.0
 @description    Dynamic masking for SORACOM User console with Stylus
 @author         Kohei "Max" MATSUSHITA
 @homepageURL    https://github.com/ma2shita/stylus-soracom-userconsole
@@ -12,7 +12,7 @@
   /* Login form for root account */
   #login-email:not(:placeholder-shown){filter:blur(5px);}
   /* login banner */
-  .login-banner {filter:blur(5px);}
+  /* .login-banner {filter:blur(5px);} */
 }
 
 @-moz-document url-prefix("https://console.soracom.io/#/sam_login") {
@@ -20,7 +20,7 @@
   #login-operator-id:not(:placeholder-shown){filter:blur(3px);}
   #login-username:not(:placeholder-shown){filter:blur(3px);}
   /* login banner */
-  .login-banner {filter:blur(5px);}
+  /* .login-banner {filter:blur(5px);} */
 }
 
 @-moz-document url-prefix("https://console.soracom.io/#/sim") {
@@ -34,21 +34,22 @@
 
 @-moz-document url-prefix("https://console.soracom.io/#/") {
   #account-dropdown span{font-size:0;} /* rewrite to account name (Step1) */
-  #account-dropdown:before{content:"YOUR@example.jp  ";font-size:1.5rem;} /* rewrite to account name (Step2) */
+  #account-dropdown:before{content:"AccountName ";font-size:1.5rem;} /* rewrite to account name (Step2) */
   /* List of SIMs */
   
   #search-keywords {color: #fff !important} /* hide search text */
   #subscribers-table td.imei-lock {filter:blur(5px);} /* IMEI lock */
   
-  #aaa > div.navbar-collapse.collapse > ul.nav.navbar-top-links.navbar-right.hidden-xs > app-account-dropdown-xs > li > ul > li.dropdown-header {font-size:0;} /* rewrite to OPID (Step1) */
-  #aaa > div.navbar-collapse.collapse > ul.nav.navbar-top-links.navbar-right.hidden-xs > app-account-dropdown-xs > li > ul > li.dropdown-header:before {content:"オペレータ ID: OPxxxxxxxxxx";font-size:1.5rem} /* rewrite to OPID (Step2) */
-  
+  #accountMenu > div > div.ds-banner > div > p {font-size:0;} /* rewrite to OPID (Step1) */
+  #accountMenu > div > div.ds-banner > div > p > strong {font-size:0;}
+  #accountMenu > div > div.ds-banner > div > p:before {content:"オペレーター ID: OPxxxxxxxxxx";font-size:1.2rem;} /* rewrite to OPID (Step2) */
+
   /* for change group dialog */
   table > tbody > tr > td.imsi {font-size:0} /* rewrite of IMSI (Step1) */
   table > tbody > tr > td.imsi:before{content:"44099 99999 99990";font-size:1.4rem;} /* rewrite of IMSI (Step2) */
   
   /* for detail dialog */
-  sc-subscriber-details-modal > div.modal-body > form > div:nth-child(2) > div > p {filter:blur(5px);} /* IMSI */
+  sc-subscriber-details-modal > div.modal-body > form > div.form-group.ng-scope > div > p {filter:blur(5px);} /* IMSI or SIM ID */
   sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > form > div:nth-child(1) > div:nth-child(2) > p {filter:blur(5px);} /* MSISDN */
   sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > form > div:nth-child(1) > div.col-sm-4 > p {filter:blur(5px);} /* 製造番号 */
   sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > form > div:nth-child(3) > div:nth-child(2) > p {font-size:0;} /* rewrite of IP Address (Step1) */
@@ -62,7 +63,7 @@
   sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > sc-subscriber-session-info > form > div:nth-child(3) > div > sc-subscriber-session-logs > div > div.panel-body > div.col-sm-12 > div > table > tbody td.session-log-imei {filter:blur(5px);} /* IMEI in session history */
   sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > sc-subscriber-session-info > form > div:nth-child(3) > div > sc-subscriber-session-logs > div > div.panel-body > div.col-sm-12 > div > table > tbody td.session-log-area-code {filter:blur(5px);} /* AREA CODE in session history */
   sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > sc-subscriber-session-info > form > div:nth-child(3) > div > sc-subscriber-session-logs > div > div.panel-body > div.col-sm-12 > div > table > tbody td.session-log-cell-id {filter:blur(5px);} /* CELL ID in session history */
-  sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > sc-subscriber-session-info > form > div.form-group.ng-scope > div.col-sm-9 > div.openlayers.ng-scope > div > div.ol-viewport {filter:blur(5px);} /* map in session history */
+  sc-subscriber-details-modal > div.modal-body > div > div > div.tab-pane.ng-scope.active > sc-subscriber-session-info > form > div.form-group.ng-scope > div.col-sm-9 > div.openlayers.ng-scope > div > div.ol-viewport {filter:blur(10px);} /* map in session history */
   
   sc-subscriber-locations-component > div {filter:blur(10px);} /* Blur map */
   sc-subscriber-locations-component div.ol-overlay-container.ol-selectable > div > div > dl > dd:nth-child(2) > div {filter:blur(5px);} /* IMSI */
@@ -92,9 +93,6 @@
   /* List of SIM group */
   #groups-table > tbody > tr > td {filter:blur(5px);}
   #groups-table > tbody > tr:nth-child(1) > td {filter:blur(0px);} /* Clarify the first item for live demo */
-}
-
-@-moz-document url-prefix("https://console.soracom.io/#/groups/") {
   /* Funk */
   app-funk-config-editor > div > div > div > div:nth-child(2) > input:not(:placeholder-shown) {filter:blur(5px);}  /* mask ARN(URL...) */
 }
@@ -137,22 +135,20 @@
 
 @-moz-document url-prefix("https://console.soracom.io/#/security/users/") {
   /* Manage of SAM user */
-  form > div:nth-child(2) > div.col-sm-9 {font-size:0} /* rewrite of Login URL (Step1) */
-  form > div:nth-child(2) > div.col-sm-9:before{content:"https://console.soracom.io/#/sam_login?o=OPxxxxxxxxxx&coverage_type=jp";font-size:1.4rem;} /* rewrite of Login URL (Step2) */
+  app-password-management > div > dl > dd:nth-child(4) > div {font-size:0} /* rewrite of Login URL (Step1) */
+  app-password-management > div > dl > dd:nth-child(4) > div:before{content:"https://console.soracom.io/#/sam_login?o=OPxxxxxxxxxx&coverage_type=jp";font-size:1.4rem;} /* rewrite of Login URL (Step2) */
 }
 
 @-moz-document url-prefix("https://console.soracom.io/#/security/credentials") {
   /* Manage of Credentials */
-  sc-credentials td.id {filter:blur(5px);}
-  sc-credentials td.last-used {filter:blur(5px);}
-  sc-credentials td.description {filter:blur(5px);}
+  app-credentials td.last-used {filter:blur(5px);}
+  app-credentials td.description {filter:blur(5px);}
 }
-
 @-moz-document url-prefix("https://console.soracom.io/#/payment_statements") {
   /* Payment statement */
-  div.panel-body > dl > dd.company-name {filter:blur(4px);}
-  div.panel-body > dl > dd.department {filter:blur(4px);}
-  div.panel-body > dl > dd.full-name {filter:blur(4px);}
+  div.company-name {filter:blur(4px);}
+  div.department {filter:blur(4px);}
+  div.full-name {filter:blur(4px);}
   td.payment-statement-amount {filter:blur(4px);}
 }
 
