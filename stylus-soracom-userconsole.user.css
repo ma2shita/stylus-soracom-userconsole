@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           SORACOM UserConsole for DEMO
 @namespace      github.com/ma2shita/stylus-soracom-userconsole
-@version        2.0.0
+@version        2.1.0
 @description    Dynamic masking for SORACOM User console with Stylus
 @author         Kohei "Max" MATSUSHITA
 @homepageURL    https://github.com/ma2shita/stylus-soracom-userconsole
@@ -33,17 +33,17 @@
 }
 
 @-moz-document url-prefix("https://console.soracom.io/#/") {
-  #account-dropdown span{font-size:0;} /* rewrite to account name (Step1) */
-  #account-dropdown:before{content:"AccountName ";font-size:1.5rem;} /* rewrite to account name (Step2) */
-  /* List of SIMs */
+  #accountMenu > summary > span > span {font-size:0;} /* rewrite to account name (Step1) */
+  #accountMenu > summary > span > span:before{content:"YOUR_NAME ";font-size:1.5rem;} /* rewrite to account name (Step2) */
   
+  /* List of SIMs */
   #search-keywords {color: #fff !important} /* hide search text */
   #subscribers-table td.imei-lock {filter:blur(5px);} /* IMEI lock */
   
   #accountMenu > div > div.ds-banner > div > p {font-size:0;} /* rewrite to OPID (Step1) */
   #accountMenu > div > div.ds-banner > div > p > strong {font-size:0;}
   #accountMenu > div > div.ds-banner > div > p:before {content:"オペレーター ID: OPxxxxxxxxxx";font-size:1.2rem;} /* rewrite to OPID (Step2) */
-
+  
   /* for change group dialog */
   table > tbody > tr > td.imsi {font-size:0} /* rewrite of IMSI (Step1) */
   table > tbody > tr > td.imsi:before{content:"44099 99999 99990";font-size:1.4rem;} /* rewrite of IMSI (Step2) */
@@ -80,10 +80,10 @@
   app-on-demand-remote-access-component td.ssh-example > code {filter:blur(5px);}
   app-on-demand-remote-access-component td.x-http-example > a {filter:blur(5px);}
   app-on-demand-remote-access-component > div > form > div:nth-child(3) > div > table > tbody > tr > td:nth-child(2) > div > code {filter:blur(5px);} /* in current status */
-
+  
   /* Device ping dialog */
   app-ping-subscribers td.imsi {filter:blur(5px);}
-
+  
   /* Registration SIM by order */
   sc-register-subscriber-modal-component table tr td:nth-child(1) {filter:blur(5px);} /* order NO */
   sc-register-subscriber-modal-component table tr td:nth-child(2) {filter:blur(5px);} /* order date */
@@ -215,4 +215,23 @@
 @-moz-document url-prefix("https://try.soracom.io/lagoon-gallery/") {
   #resource-id:not(:placeholder-shown){filter:blur(5px);} /* resource id */
   app-template-downloader > div.ds-dialog__main > div > p {filter:blur(5px);} /* resource id */
+}
+
+@-moz-document url-prefix("https://console.soracom.io/#/dashboard") {
+  /* Dashboard */
+  /* traffic */
+  app-dashboard > main > section > div > div:nth-child(1) > div > canvas {filter:blur(3px);}
+  
+  /* billing */
+  app-dashboard > main > section > div.ds-cols > a:nth-child(3) > div.ds-rows > div.ds-heading {font-size:0} /* current amount */
+  app-dashboard > main > section > div.ds-cols > a:nth-child(3) > div.ds-rows > div.ds-heading:before {content:"4,95Z";font-size:5rem}
+  app-dashboard > main > section > div.ds-cols > a:nth-child(3) > div.ds-rows > div.ds-heading > sup {font-size: 2.5rem !important;}
+  app-dashboard > main > section > div.ds-cols > a:nth-child(3) > div.ds-rows > div > div > div.ds-text:nth-child(2) {filter:blur(5px);} /* prev month */
+  
+  /* audit log */
+  app-dashboard > main > section > div.ds-cols > a:nth-child(5) > table > tbody > tr > td:nth-child(2) > div {filter:blur(5px);}
+  
+  /* IAM */
+  app-dashboard > main > section > div.ds-cols > a:nth-child(9) > div > div > div > p {filter:blur(5px);}
+  app-dashboard > main > section > div.ds-cols > a:nth-child(9) > div > a > p.ds-text:nth-child(2) {filter:blur(5px);}
 }
