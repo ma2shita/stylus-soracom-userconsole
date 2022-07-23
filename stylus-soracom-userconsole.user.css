@@ -79,6 +79,7 @@
   app-on-demand-remote-access-component td.x-allowed-ip-ranges > code {filter:blur(5px);}
   app-on-demand-remote-access-component td.ssh-example > code {filter:blur(5px);}
   app-on-demand-remote-access-component td.x-http-example > a {filter:blur(5px);}
+  app-on-demand-remote-access-component td.x-vnc-example > code {filter:blur(5px);}
   app-on-demand-remote-access-component > div > form > div:nth-child(3) > div > table > tbody > tr > td:nth-child(2) > div > code {filter:blur(5px);} /* in current status */
   
   /* Device ping dialog */
